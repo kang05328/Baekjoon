@@ -17,7 +17,6 @@ public class Main {
             int[] numbers = new int[N];
             int[] count = new int[8001];
             tmp = new int[N];
-            int frequency = -4000;
             int max = -4000;
             int maxCount = -4000;
             int min = 4000;
