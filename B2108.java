@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Main {
+public class B2108 {
 
     public static int[] tmp;
 

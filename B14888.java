@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class B14888 {
 
     public static int max = -100_000_000;
     public static int min = 100_000_000;

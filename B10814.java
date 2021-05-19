@@ -13,7 +13,7 @@ class Member {
     String name;
 }
 
-public class Main {
+public class B10814 {
 
     public static Member[] tmp;
 

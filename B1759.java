@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class 1759 {
+public class B1759 {
 
     public static char[] alphabet;
     public static char[] tmp;

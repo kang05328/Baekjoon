@@ -1,5 +1,5 @@
 import java.io.*;
-public class Main {
+public class B10989 {
 
     public static void main (String[] args) {
         try {

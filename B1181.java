@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class B1181 {
 
     public static String[] tmp;
 

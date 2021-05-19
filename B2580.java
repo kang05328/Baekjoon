@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class B2580 {
 
     public static int[][] sdoku;
 
