@@ -1,11 +1,13 @@
 import java.io.*;
 import java.util.*;
 
-public class B2667 {
+public class Main {
 
     public static boolean[][] flag;
     public static int[][] array;
     public static int[] community;
+    public static int dx[] = {0,0,1,-1};
+    public static int dy[] = {1,-1,0,0};
 
     public static void main (String[] args) {
         try {
@@ -31,7 +33,7 @@ public class B2667 {
                 for ( int j = 0; j < N; j++ ) {
                     if ( array[i][j] == 1 && !flag[i][j] ) {
                         community[index] = 1;
-                        dfs(i, j, N - 1, index);
+                        dfs(i, j, N, index);
                         count++;
                         index++;
                     }
@@ -61,31 +63,44 @@ public class B2667 {
     public static void dfs(int x, int y, int n, int index) {
         flag[x][y] = true;
 
-        if ( array[x][y] == 1 ) {
+        for ( int i = 0; i < 4; i++ ) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
 
-            if ( x < n && array[x + 1][y] == 1 && !flag[x + 1][y]) {
-                int cnt = community[index];
-                community[index] = cnt + 1;
-                dfs(x + 1, y, n, index);
+            if ( nx >= 0 && ny >= 0 && nx < n && ny < n ) {
+                if (array[nx][ny] == 1 && !flag[nx][ny] ) {
+                    int cnt = community[index];
+                    community[index] = cnt + 1;
+                    dfs(nx, ny, n, index);
+                }
             }
-            if ( x > 0 && array[x - 1][y] == 1 && !flag[x - 1][y]) {
-                int cnt = community[index];
-                community[index] = cnt + 1;
-                dfs(x - 1, y, n, index);
-            }
-            if ( y < n && array[x][y + 1] == 1 && !flag[x][y + 1]) {
-                int cnt = community[index];
-                community[index] = cnt + 1;
-                dfs(x, y + 1, n, index);
-            }
-            if ( y > 0 && array[x][y - 1] == 1 && !flag[x][y - 1]) {
-                int cnt = community[index];
-                community[index] = cnt + 1;
-                dfs(x, y - 1, n, index);
-            }
-        } else {
-            return;
         }
+
+//        if ( array[x][y] == 1 ) {
+//
+//            if ( x < n && array[x + 1][y] == 1 && !flag[x + 1][y]) {
+//                int cnt = community[index];
+//                community[index] = cnt + 1;
+//                dfs(x + 1, y, n, index);
+//            }
+//            if ( x > 0 && array[x - 1][y] == 1 && !flag[x - 1][y]) {
+//                int cnt = community[index];
+//                community[index] = cnt + 1;
+//                dfs(x - 1, y, n, index);
+//            }
+//            if ( y < n && array[x][y + 1] == 1 && !flag[x][y + 1]) {
+//                int cnt = community[index];
+//                community[index] = cnt + 1;
+//                dfs(x, y + 1, n, index);
+//            }
+//            if ( y > 0 && array[x][y - 1] == 1 && !flag[x][y - 1]) {
+//                int cnt = community[index];
+//                community[index] = cnt + 1;
+//                dfs(x, y - 1, n, index);
+//            }
+//        } else {
+//            return;
+//        }
     }
 
 }
