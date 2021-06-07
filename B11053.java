@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class B11053 {
 
     public static int[] numbers;
     public static int[] D;
