@@ -41,3 +41,54 @@ public class B1182 {
     }
 
 }
+
+/** 재귀 풀이
+ * 
+import java.io.*;
+
+public class Main {
+
+    public static int[] numbers;
+    public static boolean[] check;
+    public static int count = 0;
+
+    public static void main (String[] args) {
+        try {
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+            String[] s = br.readLine().split(" ");
+            int N = Integer.parseInt(s[0]);
+            int S = Integer.parseInt(s[1]);
+            String[] tmp = br.readLine().split(" ");
+            numbers = new int[N];
+            check = new boolean[N];
+
+            for ( int i = 0; i < N; i++ ) {
+                numbers[i] = Integer.parseInt(tmp[i]);
+            }
+
+            back(0, N, S, 0);
+
+            if ( S == 0 ) count = count - 1;
+            bw.write("" + count);
+            bw.flush();
+            bw.close();
+            br.close();
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+    }
+
+    public static void back(int index, int n, int S, int sum) {
+        if ( index == n ) {
+            if ( sum == S ) count++;
+            return;
+        }
+        back(index + 1, n, S, sum + numbers[index]);
+        back(index + 1, n, S, sum);
+    }
+}
+ */
