@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Main {
+public class B16929 {
 
     public static final int[] DX = {1, 0, -1, 0};
     public static final int[] DY = {0, -1, 0, 1};
